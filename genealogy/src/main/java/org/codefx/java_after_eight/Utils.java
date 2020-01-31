@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -35,7 +34,7 @@ public final class Utils {
 
 	public static <T> void uncheckedFilesWrite(Path path, String content) {
 		try {
-			Files.write(path, Arrays.asList(content));
+			Files.write(path, List.of(content));
 		} catch (IOException ex) {
 			throw new UncheckedIOException(ex);
 		}
